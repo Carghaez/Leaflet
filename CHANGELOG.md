@@ -3,6 +3,143 @@ Leaflet Changelog
 
 (all changes without author notice are by [@mourner](https://github.com/mourner))
 
+## 1.3.3 (2018-07-18)
+
+### Bug fixes
+
+* Remove `module` field from `package.json` ([#6239](https://github.com/Leaflet/Leaflet/issues/6239))
+
+## 1.3.2 (2018-07-17)
+
+### Improvements
+
+* Add `use-credentials` CORS option to `ImageOverlay` and `TileLayer` ([#6016](https://github.com/Leaflet/Leaflet/issues/6016) by [caleblogan](https://github.com/caleblogan)) + unit tests ([#6022](https://github.com/Leaflet/Leaflet/issues/6022) and [#6027](https://github.com/Leaflet/Leaflet/issues/6027) by [ghybs](https://github.com/ghybs))
+* Clean up references to global `L` in source code ([#6047](https://github.com/Leaflet/Leaflet/issues/6047) and [#6048](https://github.com/Leaflet/Leaflet/issues/6048) by [ghybs](https://github.com/ghybs))
+* Allow reset of `Canvas` `dashArray` option + support array type ([#6200](https://github.com/Leaflet/Leaflet/issues/6200) by [McBen](https://github.com/McBen))
+
+### Bug fixes
+
+* Respect the `preferCanvas` option in all panes ([#6019](https://github.com/Leaflet/Leaflet/issues/6019) by [mjumbewu](https://github.com/mjumbewu))
+* Do not fire `tileload` event if tile has empty `src` ([#6025](https://github.com/Leaflet/Leaflet/issues/6025) by [cherniavskii](https://github.com/cherniavskii))
+* Fix race condition when removing canvas before it has rendered ([#6033](https://github.com/Leaflet/Leaflet/issues/6033) by [louMoxy](https://github.com/louMoxy))
+* Fix memory leak in canvas renderer ([#6117](https://github.com/Leaflet/Leaflet/issues/6117) by [aj8k](https://github.com/aj8k))
+* Fix dragging for CSS scaled map ([#6055](https://github.com/Leaflet/Leaflet/issues/6055) by [ghybs](https://github.com/ghybs))
+* Handle `Polygon`s with empty array of `LatLng`s ([#6119](https://github.com/Leaflet/Leaflet/issues/6119) by [BakuCity](https://github.com/BakuCity))
+* Fix view bounds calculation in geolocation event handler ([#6140](https://github.com/Leaflet/Leaflet/issues/6140) by [wladich](https://github.com/wladich))
+* Fix error removing map and resizing window at the same time ([#6160](https://github.com/Leaflet/Leaflet/issues/6160) by [danzel](https://github.com/danzel))
+* Stop pan key event when pan animation is in progress ([#6231](https://github.com/Leaflet/Leaflet/issues/6231) by [cherniavskii](https://github.com/cherniavskii))
+
+### Docs & Web Site
+
+* Use more explicit tiles in `Map panes` example ([#6018](https://github.com/Leaflet/Leaflet/issues/6018) by [ghybs](https://github.com/ghybs))
+* Document parameter of `closestLayerPoint` method ([#6060](https://github.com/Leaflet/Leaflet/issues/6060) by [mattdsteele](https://github.com/mattdsteele))
+* Update year ranges ([#6076](https://github.com/Leaflet/Leaflet/issues/6076) by [BakuCity](https://github.com/BakuCity))
+* Use https everywhere for OSM links ([#6082](https://github.com/Leaflet/Leaflet/issues/6082) by [rzoller](https://github.com/rzoller))
+* Fix typo in `VideoOverlay.js` example docs ([#6090](https://github.com/Leaflet/Leaflet/issues/6090) by [zhuang-hao-ming](https://github.com/zhuang-hao-ming))
+* Fix typo in `LatLng` docstring ([#6138](https://github.com/Leaflet/Leaflet/issues/6138) by [jieter](https://github.com/jieter))
+* Use https everywhere and get rid of mixed content warnings ([#6151](https://github.com/Leaflet/Leaflet/issues/6151) by [theel0ja](https://github.com/theel0ja))
+* More accurate `Browser.retina` explanation ([#6203](https://github.com/Leaflet/Leaflet/issues/6203) by [JLuc](https://github.com/JLuc))
+* Use link to official RFC 7946 GeoJSON spec ([#6211](https://github.com/Leaflet/Leaflet/issues/6211) by [ghybs](https://github.com/ghybs))
+
+### ES6 / Rollup
+
+* Add ES module build ([#6021](https://github.com/Leaflet/Leaflet/issues/6021) by [Rich-Harris](https://github.com/Rich-Harris))
+
+### Development workflow
+
+* Move external dependencies to `node_modules` ([#6028](https://github.com/Leaflet/Leaflet/issues/6028) by [cherniavskii](https://github.com/cherniavskii))
+* Remove `jake` dependency and use NPM scripts instead ([#5828](https://github.com/Leaflet/Leaflet/issues/5828) by [cherniavskii](https://github.com/cherniavskii))
+* Update `ssri` dependency to `5.2.2` ([#6086](https://github.com/Leaflet/Leaflet/issues/6086) by [cherniavskii](https://github.com/cherniavskii))
+* Set div width for `getBoundsZoom` parameter `inside` ([#6192](https://github.com/Leaflet/Leaflet/issues/6192) by [ghybs](https://github.com/ghybs))
+* Fix unit tests for graphical browsers ([#6199](https://github.com/Leaflet/Leaflet/issues/6199) and [#6202](https://github.com/Leaflet/Leaflet/issues/6202) by [ghybs](https://github.com/ghybs))
+* Run tests in Firefox graphical browser as part of CI ([#5831](https://github.com/Leaflet/Leaflet/issues/5831) by [cherniavskii](https://github.com/cherniavskii))
+
+
+## 1.3.1 (2018-01-18)
+
+### Bug fixes
+
+* Fix `L.TileLayer`regression, which caused incorrect tile URLs ([#6006](https://github.com/Leaflet/Leaflet/issues/6006) by [ghybs](https://github.com/ghybs))
+
+
+## 1.3.0 (2018-01-15)
+
+### API changes
+
+* Add `tolerance` option to `L.Renderer` instead of hardcoded tolerance for touch devices ([#5922](https://github.com/Leaflet/Leaflet/issues/5922) by [Muscot](https://github.com/Muscot)).
+
+### Improvements
+
+* Use more stable form of Haversine formula ([#5935](https://github.com/Leaflet/Leaflet/issues/5935) by [jussimattas](https://github.com/jussimattas))
+* Add `autoPan` option to `L.Marker` ([#5651](https://github.com/Leaflet/Leaflet/issues/5651) by [alenaksu](https://github.com/alenaksu))
+* Cancel http requests for outdated tiles ([#5615](https://github.com/Leaflet/Leaflet/issues/5615) by [jbccollins](https://github.com/jbccollins))
+* Add `closeOnEscapeKey` option to `L.Popup` ([#5730](https://github.com/Leaflet/Leaflet/issues/5730) by [Mickyfen17](https://github.com/Mickyfen17))
+* Add `tileerror` tests to `L.GridLayer` spec ([#5805](https://github.com/Leaflet/Leaflet/issues/5805) by [msiadak](https://github.com/msiadak))
+* Use `eachLayer` method for iterations over layers in `L.LayerGroup` ([#5809](https://github.com/Leaflet/Leaflet/issues/5809) by [cherniavskii](https://github.com/cherniavskii))
+* Change `Util.formatNum` default to 6 decimals ([#5492](https://github.com/Leaflet/Leaflet/issues/5492) by [fminuti](https://github.com/fminuti))
+* Fire `zoomlevelschange` event when calling `setMinZoom` & `setMaxZoom` ([#5230](https://github.com/Leaflet/Leaflet/issues/5230) by [mynameisstephen](https://github.com/mynameisstephen))
+* Use zoom parameter if passed to `L.TileLayer`'s `getTileUrl` method ([#5822](https://github.com/Leaflet/Leaflet/issues/5822) by [broncha](https://github.com/broncha))
+* Round circle radius in renderer instead of layer ([#5859](https://github.com/Leaflet/Leaflet/issues/5859) by [perliedman](https://github.com/perliedman))
+* Make `L.LayerGroup` accept options ([#5792](https://github.com/Leaflet/Leaflet/issues/5792) by [iH8](https://github.com/iH8))
+* Round pan offset towards zero ([#5858](https://github.com/Leaflet/Leaflet/issues/5858) by [perliedman](https://github.com/perliedman))
+* Improve heuristic for what event targets are considered markers ([#5885](https://github.com/Leaflet/Leaflet/issues/5885) by [perliedman](https://github.com/perliedman))
+* Add `typeof` check to `checkDeprecatedMixinEvents` ([#5901](https://github.com/Leaflet/Leaflet/issues/5901) by [murb](https://github.com/murb))
+* Optimize images ([#5936](https://github.com/Leaflet/Leaflet/issues/5936) by [grischard](https://github.com/grischard))
+* Add `addTo` static function to `L.Handler` class ([#5930](https://github.com/Leaflet/Leaflet/issues/5930) by [cherniavskii](https://github.com/cherniavskii))
+* `L.ImageOverlay` accepts `ImageElement` ([#5948](https://github.com/Leaflet/Leaflet/issues/5948) by [ronikar](https://github.com/ronikar))
+
+### Bug fixes
+
+* Fix adding CSS classes in `L.VideoOverlay`, which caused map crash in IE8 ([#5731](https://github.com/Leaflet/Leaflet/issues/5731) by [Dzwiedzminator](https://github.com/Dzwiedzminator) and [#5785](https://github.com/Leaflet/Leaflet/issues/5785) by [cherniavskii](https://github.com/cherniavskii))
+* No inertia if drag is stopped before ending the drag ([#5690](https://github.com/Leaflet/Leaflet/issues/5690) by [perliedman](https://github.com/perliedman))
+* Remove tiles from the `_tiles` cache when they're aborted ([#5634](https://github.com/Leaflet/Leaflet/issues/5634) by [oliverheilig](https://github.com/oliverheilig))
+* Use same condition for adding as well as removing double tap listener ([#5598](https://github.com/Leaflet/Leaflet/issues/5598) by [perliedman](https://github.com/perliedman))
+* Correctly wrap tile coordinate bounds ([#5715](https://github.com/Leaflet/Leaflet/issues/5715) by [perliedman](https://github.com/perliedman))
+* Fix `L.TileLayer` infinite error loop ([#5783](https://github.com/Leaflet/Leaflet/issues/5783) by [cherniavskii](https://github.com/cherniavskii))
+* Fix map not rendering when images have max-height ([#5778](https://github.com/Leaflet/Leaflet/issues/5778) by [idanen](https://github.com/idanen))
+* Add defensive check for `this._map` in `L.Marker`'s `update` method ([#5736](https://github.com/Leaflet/Leaflet/issues/5736) by [dnepromell](https://github.com/dnepromell))
+* Fix zoom when map container is scaled ([#5794](https://github.com/Leaflet/Leaflet/issues/5794) by [cherniavskii](https://github.com/cherniavskii))
+* Update DomPointer.js to revert typo ([#5817](https://github.com/Leaflet/Leaflet/issues/5817) by [daverayment](https://github.com/daverayment))
+* Fix `L.ImageOverlay` `className` option ([#5830](https://github.com/Leaflet/Leaflet/issues/5830) by [cherniavskii](https://github.com/cherniavskii))
+* Fix `L.TileLayer.WMS` when using Polar stereographic ([#5618](https://github.com/Leaflet/Leaflet/issues/5618) by [scaddenp](https://github.com/scaddenp))
+* Stop animation before removing map ([#5876](https://github.com/Leaflet/Leaflet/issues/5876) by [dnepromell](https://github.com/dnepromell) and [#5918](https://github.com/Leaflet/Leaflet/issues/5918) by [aaronplanell](https://github.com/aaronplanell))
+* Stop locate before removing map ([#5893](https://github.com/Leaflet/Leaflet/issues/5893) by [ghybs](https://github.com/ghybs))
+* Reset `GridLayer`'s `_tileZoom` to `undefined` instead of `null` ([#5888](https://github.com/Leaflet/Leaflet/issues/5888) by [iH8](https://github.com/iH8))
+* Fix `L.Map`'s `map.flyTo` method to respect `noMoveStart` option ([#5923](https://github.com/Leaflet/Leaflet/issues/5923) by [iPrytz](https://github.com/iPrytz))
+* Fix map pan when `touchZoom` is disabled ([#5952](https://github.com/Leaflet/Leaflet/issues/5952) by [cherniavskii](https://github.com/cherniavskii))
+* Fix `L.SVG` to reset size on remove from map ([#5966](https://github.com/Leaflet/Leaflet/issues/5966) by [ghybs](https://github.com/ghybs))
+* Fix `L.Marker` to set `alt` attribute for img-based Icons only ([#5979](https://github.com/Leaflet/Leaflet/issues/5979) by [msiadak](https://github.com/msiadak))
+
+### Docs & Web Site
+
+* Add documentation for `PolyLine.closestLayerPoint` ([#5701](https://github.com/Leaflet/Leaflet/issues/5701) by [perliedman](https://github.com/perliedman))
+* Replace urls for samples in wms documentation ([#5712](https://github.com/Leaflet/Leaflet/issues/5712) by [jjimenezshaw](https://github.com/jjimenezshaw))
+* Add `DomEvent.stop` event type to docs ([#5733](https://github.com/Leaflet/Leaflet/issues/5733) by [theashyster](https://github.com/theashyster))
+* Update links to GeoJSON spec in GeoJSON examples ([#5725](https://github.com/Leaflet/Leaflet/issues/5725) by [astridx](https://github.com/astridx))
+* Improve docs for `L.LatLngBounds` `pad` method ([#5748](https://github.com/Leaflet/Leaflet/issues/5748) by [CalvinWilliams1012](https://github.com/CalvinWilliams1012))
+* Improve Zoom-levels documentation to reflect function properly ([#5769](https://github.com/Leaflet/Leaflet/issues/5769) by [CalvinWilliams1012](https://github.com/CalvinWilliams1012))
+* Fix map's height and width in examples to make attributions visible on mobile ([#5772](https://github.com/Leaflet/Leaflet/issues/5772) by [CalvinWilliams1012](https://github.com/CalvinWilliams1012) and [#5819](https://github.com/Leaflet/Leaflet/issues/5819) by [cherniavskii](https://github.com/cherniavskii))
+* Fix `L.FeatureGroup` `bringToBack` method docs ([#5788](https://github.com/Leaflet/Leaflet/issues/5788) by [fpopa](https://github.com/fpopa))
+* Fix `L.LatLng` `distanceTo` method description ([#5791](https://github.com/Leaflet/Leaflet/issues/5791) by [loisgh](https://github.com/loisgh))
+* Fix docs redirects to latest version reference ([#5824](https://github.com/Leaflet/Leaflet/issues/5824) by [cherniavskii](https://github.com/cherniavskii))
+* Add CDN alternatives ([#5837](https://github.com/Leaflet/Leaflet/issues/5837) by [ghybs](https://github.com/ghybs))
+* Update docs for `L.DomEvent.off()` ([#5855](https://github.com/Leaflet/Leaflet/issues/5855) by [77ganesh](https://github.com/77ganesh) and [#5976](https://github.com/Leaflet/Leaflet/issues/5976) by [kring](https://github.com/kring))
+* Move `L.SVG` factory docs to appropriate place ([#5864](https://github.com/Leaflet/Leaflet/issues/5864) by [cherniavskii](https://github.com/cherniavskii))
+* New Leaflet playgrounds on Plunker, Codepen and JSFiddle ([#5868](https://github.com/Leaflet/Leaflet/issues/5868) by [iH8](https://github.com/iH8))
+* Clarify that any option keys can be used ([#5877](https://github.com/Leaflet/Leaflet/issues/5877) by [perliedman](https://github.com/perliedman))
+* Add notes about some classes not inheriting Class ([#5878](https://github.com/Leaflet/Leaflet/issues/5878) by [perliedman](https://github.com/perliedman))
+* Clean up and document event propagation properties ([#5880](https://github.com/Leaflet/Leaflet/issues/5880) by [perliedman](https://github.com/perliedman))
+* Update building instructions ([#5911](https://github.com/Leaflet/Leaflet/issues/5911) by [shadeland](https://github.com/shadeland))
+* Document `mouseup` event for interactive `L.Layer` ([#5941](https://github.com/Leaflet/Leaflet/issues/5941) by [germansokolov13](https://github.com/germansokolov13))
+* Document `L.Icon`'s `tooltipAnchor` option, update `tooltipAnchor` and `popupAnchor` default values docs ([#5989](https://github.com/Leaflet/Leaflet/issues/5989) by [cherniavskii](https://github.com/cherniavskii))
+
+### ES6 / Rollup
+
+* Tweak `legacy` option in rollup config - now Leaflet works in IE again ([#5929](https://github.com/Leaflet/Leaflet/issues/5929) by [IvanSanchez](https://github.com/IvanSanchez))
+* Remove warning alert in watch bundle ([#5714](https://github.com/Leaflet/Leaflet/issues/5714) by [perliedman](https://github.com/perliedman))
+* New rollup config signature ([#5812](https://github.com/Leaflet/Leaflet/issues/5812) by [iH8](https://github.com/iH8))
+
+
 ## 1.2.0 (2017-08-08)
 
 ### API Changes
